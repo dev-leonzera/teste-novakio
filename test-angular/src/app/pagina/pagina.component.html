@@ -1,0 +1,31 @@
+<!--
+  // TODO: criar o layout como no diagrama
+  // TODO: adicionar o link de navegação à sidebar
+  // TODO: exibir a resposta da data-hora consultada na api
+  // TODO: adicionar um input e um botão à página
+  // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
+-->
+
+
+<div class="pagina-container">
+  <div class="header">
+    <h1 style="text-align: center; color: aliceblue;">Teste Novakio</h1>
+  </div>
+  <div style="display: flex">
+    <div class="sidebar">
+      <h1>SIDEBAR</h1>
+      <a routerLink="/start">Start</a>
+    </div>
+    <div class="content">
+      {{ apiGreeting }}
+      <br>
+      {{ datetime }}
+      <br />
+      <form class="form-message">
+        <input type="text" class="message-input" name="message" #message/>
+        <button type="button" class="add-button" (click)="sendMessage(message.value); message.value=''">Enviar</button>
+      </form>
+      {{ sentMessage }}
+    </div>
+  </div>
+</div>
